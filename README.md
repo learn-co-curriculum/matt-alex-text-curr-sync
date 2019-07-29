@@ -47,19 +47,19 @@ MARKDOWN 03
 
 ```python
 # MD 03a MASTER
-# 3 interwoven cells on each
+# 3 cells on each
 ```
 
 
 ```python
 # MD 03b MASTER
-# 3 interwoven cells on each
+# 3 cells on each
 ```
 
 
 ```python
 # MD 03c MASTER
-# 3 interwoven cells on each
+# 3 cells on each
 ```
 
 
@@ -88,13 +88,13 @@ MARKODWN 04
 
 ```python
 # MD 04a MASTER
-# 2 master followed by 3 solution
+# 2 master 3 solution
 ```
 
 
 ```python
 # MD 04b MASTER
-# 2 master followed by 3 solution
+# 2 master 3 solution
 ```
 
 
