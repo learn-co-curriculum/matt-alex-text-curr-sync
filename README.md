@@ -1,4 +1,133 @@
 
+MARKDOWN 01
+
+
+```python
+# MD 01 MASTER
+# 1 code cell on master, 2 on solution
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 01a SOLUTION
+# 1 code cell on master, 2 on solution
+```
+
+MARKDOWN 02
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 01b SOLUTION
+# 1 code cell on master, 2 on solution
+```
+
+
+```python
+# MD 02a MASTER
+# 2 code cells on master, 1 on solution
+```
+
+
+```python
+# MD 02b MASTER
+# 2 code cells on master, 1 on solution
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 02 MASTER
+# 2 code cells on master, 1 on solution
+```
+
+MARKDOWN 03
+
+
+```python
+# MD 03a MASTER
+# 3 interwoven cells on each
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 03a SOLUTION
+# 3 cells on each
+```
+
+
+```python
+# MD 03b MASTER
+# 3 interwoven cells on each
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 03b SOLUTION
+# 3 cells on each
+```
+
+
+```python
+# MD 03c MASTER
+# 3 interwoven cells on each
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 03c SOLUTION
+# 3 cells on each
+```
+
+MARKODWN 04
+
+
+```python
+# MD 04a MASTER
+# 2 master followed by 3 solution
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 04a SOLUTION
+# 2 master 3 solution
+```
+
+
+```python
+# MD 04b MASTER
+# 2 master followed by 3 solution
+```
+
+
+```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 04b SOLUTION
+# 2 master 3 solution
+```
+
 # Facebook Prophet - Lab
 
 ## Introduction
@@ -27,46 +156,39 @@ In order to compute its forecasts, the fbprophet library relies on the STAN prog
 
 
 ```python
+# __SOLUTION__ 
+# __SOLUTION__ 
+# __SOLUTION__ 
+# MD 04c SOLUTION
+# 2 master 3 solution
+```
+
+
+```python
 #!pip install pystan
 ```
 
 
 ```python
-# __SOLUTION__ 
+#!pip install fbprophet
+```
+
+
+```python
 # __SOLUTION__ 
 #!pip install pystan
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-#!pip install fbprophet
-```
-
-
-```python
-#!pip install fbprophet
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-#!pip install pystan
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-#!pip install fbprophet
 ```
 
 Let's start by reading in our time-series data. We shall cover some data manipulation using pandas, accessing financial data using the `Quandl` library and, and plotting with matplotlib. 
 
 
 ```python
+# __SOLUTION__ 
+#!pip install fbprophet
+```
+
+
+```python
 #Import necessary libraries
 import warnings
 warnings.filterwarnings('ignore')
@@ -88,7 +210,12 @@ from fbprophet import Prophet as proph
 
 
 ```python
-# __SOLUTION__ 
+# Import passengers.csv and set it as a time-series object. 
+
+```
+
+
+```python
 # __SOLUTION__ 
 #Import necessary libraries
 import warnings
@@ -107,59 +234,20 @@ plt.style.use('fivethirtyeight')
 
 from fbprophet import Prophet as proph
 
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Import passengers.csv and set it as a time-series object. 
-ts = pd.read_csv('passengers.csv')
-ts['Month'] = pd.DatetimeIndex(ts['Month'])
-```
-
-
-```python
-# Import passengers.csv and set it as a time-series object. 
-
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-#Import necessary libraries
-import warnings
-warnings.filterwarnings('ignore')
-
-
-import pandas as pd 
-
-# Matplotlib for plotting
-import matplotlib.pyplot as plt
-import matplotlib
-import seaborn as sns
-%matplotlib inline
-from matplotlib.pylab import rcParams
-plt.style.use('fivethirtyeight')
-
-from fbprophet import Prophet as proph
-
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Import passengers.csv and set it as a time-series object. 
-ts = pd.read_csv('passengers.csv')
-ts['Month'] = pd.DatetimeIndex(ts['Month'])
 ```
 
 The prophet library also imposes the strict condition that the input columns be named `ds` (the time column) and `y` (the metric column), so let's rename the columns in our `ts` dataframe. 
 
 
 ```python
+# __SOLUTION__ 
+# Import passengers.csv and set it as a time-series object. 
+ts = pd.read_csv('passengers.csv')
+ts['Month'] = pd.DatetimeIndex(ts['Month'])
+```
+
+
+```python
 # Rename the columns [Month, AirPassengers] to [ds, y]
 
 
@@ -173,108 +261,12 @@ The prophet library also imposes the strict condition that the input columns be 
 
 
 ```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Rename the columns [Month, AirPassengers] to [ds, y]
-ts = ts.rename(columns={'Month': 'ds',
-                        '#Passengers': 'y'})
-
-ts.head(5)
-
-#    ds          y
-# 1949-01-01	112
-# 1949-02-01	118
-# 1949-03-01	132
-# 1949-04-01	129
-# 1949-05-01	121
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ds</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1949-01-01</td>
-      <td>112</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1949-02-01</td>
-      <td>118</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1949-03-01</td>
-      <td>132</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1949-04-01</td>
-      <td>129</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1949-05-01</td>
-      <td>121</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Plot the timeseries 
-
-ax = ts.set_index('ds').plot(figsize=(15, 8))
-ax.set_ylabel('No. of Airline Passengers/Month')
-ax.set_xlabel('Date')
-
-plt.show()
-```
-
-
-![png](index_files/index_17_0.png)
-
-
-
-```python
 # Plot the timeseries 
 
 ```
 
 
 ```python
-# __SOLUTION__ 
-# __SOLUTION__ 
 # __SOLUTION__ 
 # Rename the columns [Month, AirPassengers] to [ds, y]
 ts = ts.rename(columns={'Month': 'ds',
@@ -349,8 +341,11 @@ ts.head(5)
 
 
 ```python
-# __SOLUTION__ 
-# __SOLUTION__ 
+
+```
+
+
+```python
 # __SOLUTION__ 
 # Plot the timeseries 
 
@@ -362,106 +357,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_20_0.png)
-
-
-
-```python
-
-```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Rename the columns [Month, AirPassengers] to [ds, y]
-ts = ts.rename(columns={'Month': 'ds',
-                        '#Passengers': 'y'})
-
-ts.head(5)
-
-#    ds          y
-# 1949-01-01	112
-# 1949-02-01	118
-# 1949-03-01	132
-# 1949-04-01	129
-# 1949-05-01	121
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ds</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1949-01-01</td>
-      <td>112</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1949-02-01</td>
-      <td>118</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1949-03-01</td>
-      <td>132</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1949-04-01</td>
-      <td>129</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1949-05-01</td>
-      <td>121</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Plot the timeseries 
-
-ax = ts.set_index('ds').plot(figsize=(15, 8))
-ax.set_ylabel('No. of Airline Passengers/Month')
-ax.set_xlabel('Date')
-
-plt.show()
-```
-
-
-![png](index_files/index_23_0.png)
+![png](index_files/index_36_0.png)
 
 
 ## Time Series Forecasting with Prophet
@@ -884,7 +780,6 @@ Prophet also provides a convenient function to quickly plot the results of our f
 
 ```python
 # __SOLUTION__ 
-# __SOLUTION__ 
 # Use prophet's plot function to plot the predictions
 
 Model.plot(forecast, uncertainty=True)
@@ -892,31 +787,28 @@ plt.show()
 ```
 
 
-![png](index_files/index_41_0.png)
+![png](index_files/index_54_0.png)
 
 
 
 ```python
 
 ```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-# Use prophet's plot function to plot the predictions
-
-Model.plot(forecast, uncertainty=True)
-plt.show()
-```
-
-
-![png](index_files/index_43_0.png)
-
 
 Prophet plots the observed values of the time-series (the black dots), the forecasted values (blue line) and the uncertainty intervals of our forecasts (the blue shaded regions).
 
 One other particularly strong feature of Prophet is its ability to return the components of our forecasts. This can help reveal how daily, weekly and yearly patterns of the time series contribute to the overall forecasted values. We can use `plot_components()` function to view the individual components.
+
+
+```python
+# __SOLUTION__ 
+Model.plot_components(forecast)
+plt.show()
+```
+
+
+![png](index_files/index_57_0.png)
+
 
 
 ```python
@@ -925,33 +817,12 @@ One other particularly strong feature of Prophet is its ability to return the co
 
 
 ```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-Model.plot_components(forecast)
-plt.show()
-```
-
-
-![png](index_files/index_46_0.png)
-
-
-
-```python
 
 ```
-
-
-```python
-# __SOLUTION__ 
-# __SOLUTION__ 
-Model.plot_components(forecast)
-plt.show()
-```
-
-
-![png](index_files/index_48_0.png)
-
 
 Since we are working with monthly data, Prophet will plot the trend and the yearly seasonality but if you were working with daily data, you would also see a weekly seasonality plot included.
 
 From the trend and seasonality, we can see that the trend is a playing a large part in the underlying time series and seasonality comes into play mostly toward the beginning and the end of the year. With this information, we've been able to quickly model and forecast some data to get a feel for what might be coming our way in the future from this particular data set.
+
+## Summary 
+In this lab, you learned how to use the Prophet library to perform time series forecasting in Python. We have been using out-of-the box parameters, but Prophet enables us to specify many more arguments. In particular, Prophet provides the functionality to bring your own knowledge about time series to the table.
