@@ -1,5 +1,67 @@
 
-# Facebook Prophet - Lab
+MARKDOWN 01
+
+
+```python
+# MD 01a SOLUTION
+# 1 code cell on master, 2 on solution
+```
+
+
+```python
+# MD 01b SOLUTION
+# 1 code cell on master, 2 on solution
+```
+
+MARKDOWN 02
+
+
+```python
+# MD 02 MASTER
+# 2 code cells on master, 1 on solution
+```
+
+MARKDOWN 03
+
+
+```python
+# MD 03a SOLUTION
+# 3 cells on each
+```
+
+
+```python
+# MD 03b SOLUTION
+# 3 cells on each
+```
+
+
+```python
+# MD 03c SOLUTION
+# 3 cells on each
+```
+
+MARKODWN 04
+
+
+```python
+# MD 04a SOLUTION
+# 2 master 3 solution
+```
+
+
+```python
+# MD 04b SOLUTION
+# 2 master 3 solution
+```
+
+
+```python
+# MD 04c SOLUTION
+# 2 master 3 solution
+```
+
+# Facebook Prophet - Lab!
 
 ## Introduction
 
@@ -152,7 +214,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_8_0.png)
+![png](index_files/index_21_0.png)
 
 
 ## Time Series Forecasting with Prophet
@@ -518,7 +580,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_20_0.png)
+![png](index_files/index_33_0.png)
 
 
 Prophet plots the observed values of the time-series (the black dots), the forecasted values (blue line) and the uncertainty intervals of our forecasts (the blue shaded regions).
@@ -532,7 +594,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_22_0.png)
+![png](index_files/index_35_0.png)
 
 
 Since we are working with monthly data, Prophet will plot the trend and the yearly seasonality but if you were working with daily data, you would also see a weekly seasonality plot included.
@@ -541,3 +603,8 @@ From the trend and seasonality, we can see that the trend is a playing a large p
 
 ## Summary 
 In this lab, you learned how to use the Prophet library to perform time series forecasting in Python. We have been using out-of-the box parameters, but Prophet enables us to specify many more arguments. In particular, Prophet provides the functionality to bring your own knowledge about time series to the table.
+
+
+```python
+# a trailing cell on solution!
+```
