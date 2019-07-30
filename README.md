@@ -14,14 +14,14 @@ MARKDOWN 01
 # 1 code cell on master, 2 on solution
 ```
 
+MARKDOWN 02
+
 
 ```python
 # __SOLUTION__ 
 # MD 01b SOLUTION
 # 1 code cell on master, 2 on solution
 ```
-
-MARKDOWN 02
 
 
 ```python
@@ -52,18 +52,6 @@ MARKDOWN 03
 
 
 ```python
-# MD 03b MASTER
-# 3 cells on each
-```
-
-
-```python
-# MD 03c MASTER
-# 3 cells on each
-```
-
-
-```python
 # __SOLUTION__ 
 # MD 03a SOLUTION
 # 3 cells on each
@@ -71,8 +59,20 @@ MARKDOWN 03
 
 
 ```python
+# MD 03b MASTER
+# 3 cells on each
+```
+
+
+```python
 # __SOLUTION__ 
 # MD 03b SOLUTION
+# 3 cells on each
+```
+
+
+```python
+# MD 03c MASTER
 # 3 cells on each
 ```
 
@@ -93,12 +93,6 @@ MARKODWN 04
 
 
 ```python
-# MD 04b MASTER
-# 2 master 3 solution
-```
-
-
-```python
 # __SOLUTION__ 
 # MD 04a SOLUTION
 # 2 master 3 solution
@@ -106,15 +100,14 @@ MARKODWN 04
 
 
 ```python
-# __SOLUTION__ 
-# MD 04b SOLUTION
+# MD 04b MASTER
 # 2 master 3 solution
 ```
 
 
 ```python
 # __SOLUTION__ 
-# MD 04c SOLUTION
+# MD 04b SOLUTION
 # 2 master 3 solution
 ```
 
@@ -146,6 +139,13 @@ In order to compute its forecasts, the fbprophet library relies on the STAN prog
 
 
 ```python
+# __SOLUTION__ 
+# MD 04c SOLUTION
+# 2 master 3 solution
+```
+
+
+```python
 #!pip install pystan
 ```
 
@@ -158,15 +158,15 @@ In order to compute its forecasts, the fbprophet library relies on the STAN prog
 ```python
 # __SOLUTION__ 
 #!pip install pystan
-```
-
-
-```python
-# __SOLUTION__ 
-#!pip install fbprophet
 ```
 
 Let's start by reading in our time-series data. We shall cover some data manipulation using pandas, accessing financial data using the `Quandl` library and, and plotting with matplotlib. 
+
+
+```python
+# __SOLUTION__ 
+#!pip install fbprophet
+```
 
 
 ```python
@@ -216,6 +216,8 @@ plt.style.use('fivethirtyeight')
 from fbprophet import Prophet as proph
 
 ```
+
+The prophet library also imposes the strict condition that the input columns be named `ds` (the time column) and `y` (the metric column), so let's rename the columns in our `ts` dataframe. 
 
 
 ```python
@@ -224,8 +226,6 @@ from fbprophet import Prophet as proph
 ts = pd.read_csv('passengers.csv')
 ts['Month'] = pd.DatetimeIndex(ts['Month'])
 ```
-
-The prophet library also imposes the strict condition that the input columns be named `ds` (the time column) and `y` (the metric column), so let's rename the columns in our `ts` dataframe. 
 
 
 ```python
@@ -243,11 +243,6 @@ The prophet library also imposes the strict condition that the input columns be 
 
 ```python
 # Plot the timeseries 
-
-```
-
-
-```python
 
 ```
 
@@ -324,6 +319,11 @@ ts.head(5)
 </div>
 
 
+
+
+```python
+
+```
 
 
 ```python
@@ -760,11 +760,6 @@ Prophet also provides a convenient function to quickly plot the results of our f
 
 
 ```python
-
-```
-
-
-```python
 # __SOLUTION__ 
 # Use prophet's plot function to plot the predictions
 
@@ -773,12 +768,28 @@ plt.show()
 ```
 
 
-![png](index_files/index_55_0.png)
+![png](index_files/index_54_0.png)
 
+
+
+```python
+
+```
 
 Prophet plots the observed values of the time-series (the black dots), the forecasted values (blue line) and the uncertainty intervals of our forecasts (the blue shaded regions).
 
 One other particularly strong feature of Prophet is its ability to return the components of our forecasts. This can help reveal how daily, weekly and yearly patterns of the time series contribute to the overall forecasted values. We can use `plot_components()` function to view the individual components.
+
+
+```python
+# __SOLUTION__ 
+Model.plot_components(forecast)
+plt.show()
+```
+
+
+![png](index_files/index_57_0.png)
+
 
 
 ```python
@@ -790,20 +801,15 @@ One other particularly strong feature of Prophet is its ability to return the co
 
 ```
 
-
-```python
-# __SOLUTION__ 
-Model.plot_components(forecast)
-plt.show()
-```
-
-
-![png](index_files/index_59_0.png)
-
-
 Since we are working with monthly data, Prophet will plot the trend and the yearly seasonality but if you were working with daily data, you would also see a weekly seasonality plot included.
 
 From the trend and seasonality, we can see that the trend is a playing a large part in the underlying time series and seasonality comes into play mostly toward the beginning and the end of the year. With this information, we've been able to quickly model and forecast some data to get a feel for what might be coming our way in the future from this particular data set.
+
+
+```python
+# __SOLUTION__ 
+# a trailing cell on solution!
+```
 
 ## Summary 
 In this lab, you learned how to use the Prophet library to perform time series forecasting in Python. We have been using out-of-the box parameters, but Prophet enables us to specify many more arguments. In particular, Prophet provides the functionality to bring your own knowledge about time series to the table.
@@ -811,10 +817,4 @@ In this lab, you learned how to use the Prophet library to perform time series f
 
 ```python
 # a trailing cell on master!
-```
-
-
-```python
-# __SOLUTION__ 
-# a trailing cell on solution!
 ```
