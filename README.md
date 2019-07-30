@@ -804,3 +804,17 @@ plt.show()
 Since we are working with monthly data, Prophet will plot the trend and the yearly seasonality but if you were working with daily data, you would also see a weekly seasonality plot included.
 
 From the trend and seasonality, we can see that the trend is a playing a large part in the underlying time series and seasonality comes into play mostly toward the beginning and the end of the year. With this information, we've been able to quickly model and forecast some data to get a feel for what might be coming our way in the future from this particular data set.
+
+## Summary 
+In this lab, you learned how to use the Prophet library to perform time series forecasting in Python. We have been using out-of-the box parameters, but Prophet enables us to specify many more arguments. In particular, Prophet provides the functionality to bring your own knowledge about time series to the table.
+
+
+```python
+# a trailing cell on master!
+```
+
+
+```python
+# __SOLUTION__ 
+# a trailing cell on solution!
+```
